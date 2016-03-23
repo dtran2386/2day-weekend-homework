@@ -72,3 +72,14 @@ body{
     background-color: rgb(106,172,230);
 }
 
+footer {
+    margin-top: 15%;
+    font-size: 7px;
+    text-align: center;
+}
+
+#tran{
+    margin-top: 5%;
+    font-size: 6px;
+    text-align: center;
+}
