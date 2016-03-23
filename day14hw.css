@@ -4,6 +4,7 @@ body {
     border: 7px solid rgb(139,138,143);
     border-radius: 7px;
     padding: 3.5%;
+    
 }
 img {
     height: 200px;
@@ -66,3 +67,4 @@ button {
     border-radius: 7px;
     font-size: 95%;
 }
+
