@@ -1,3 +1,6 @@
+var linkifyStr = require('linkifyjs/string');
+var moment = require('moment');
+
 module.exports = function () {    
     
     var intervalID = window.setInterval(myCallback, 5000);
@@ -11,7 +14,7 @@ module.exports = function () {
         for (var i = 0; i < data.length; i++) {
             var chatOutput = document.createElement('p');
             chatOutput.textContent = data[i];
-            parent.appendChild(chatOutput).innerHTML = moment(data[i].when).format('LT') + ' [' + data[i].user.toUpperCase() + '] ' + data[i].message;
+            parent.appendChild(chatOutput).innerHTML = moment(data[i].when).format('LT') + ' [' + data[i].user.toUpperCase() + '] ' + linkifyStr(data[i].message);
         } //end for
         console.log(data[i]);
     };
