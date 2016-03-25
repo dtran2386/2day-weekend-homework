@@ -28,7 +28,6 @@ gulp.task('js', function () {
             node: true,
         }))
         .pipe(browserify())
-        //.pipe(uglify())
         .pipe(gulp.dest('public/js'));
 });
 
