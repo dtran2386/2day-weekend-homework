@@ -1,4 +1,5 @@
 module.exports = function () {    
+    
     var intervalID = window.setInterval(myCallback, 5000);
     function myCallback() {
     var request = new XMLHttpRequest();
@@ -6,12 +7,11 @@ module.exports = function () {
     request.onload = function() {
         var parent = document.getElementById("textBox"); 
         parent.innerHTML = '';
-        
         var data = JSON.parse(request.responseText);
         for (var i = 0; i < data.length; i++) {
             var chatOutput = document.createElement('p');
             chatOutput.textContent = data[i];
-            parent.appendChild(chatOutput).innerHTML = '[' + data[i].user + ']' + ': ' + data[i].message;
+            parent.appendChild(chatOutput).innerHTML = moment(data[i].when).format('LT') + ' [' + data[i].user.toUpperCase() + '] ' + data[i].message;
         } //end for
         console.log(data[i]);
     };
