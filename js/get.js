@@ -1,6 +1,26 @@
 var linkifyStr = require('linkifyjs/string');
 var moment = require('moment');
 
+function getRandom() {
+  var shoutout = new XMLHttpRequest();
+  shoutout.open('GET', 'https://randomuser.me/api/');
+  shoutout.onload = function() {
+    var objectForm = JSON.parse(shoutout.responseText);
+    getRandom(function (person) {
+      var pictures = document.getElementById('textBox');
+      var pic = pictures.setAttribute('src', person.results[0].user.picture.thumbnail);
+    });
+    //callMe(objectForm);
+  };
+  shoutout.send();
+}; // end getRandom
+//window.addEventListener('load', function () {
+//    getRandom(function (person) {
+//        var pictures = document.getElementById('textBox');
+//        var pic = pictures.setAttribute('src', person.results[0].user.picture.medium);
+//    });
+//});
+
 module.exports = function () {    
     
     var intervalID = window.setInterval(myCallback, 5000);
@@ -14,7 +34,7 @@ module.exports = function () {
         for (var i = 0; i < data.length; i++) {
             var chatOutput = document.createElement('p');
             chatOutput.textContent = data[i];
-            parent.appendChild(chatOutput).innerHTML = moment(data[i].when).format('LT') + ' [' + data[i].user.toUpperCase() + '] ' + linkifyStr(data[i].message);
+            parent.appendChild(chatOutput).innerHTML = moment(data[i].when).format('LT') + ' [' + data[i].user.toUpperCase() + '] ' + linkifyStr(data[i].message) + getRandom(data[i].id);
         } //end for
         console.log(data[i]);
     };
