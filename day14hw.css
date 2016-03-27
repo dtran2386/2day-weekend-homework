@@ -4,11 +4,16 @@ body {
     border: 7px solid rgb(139,138,143);
     border-radius: 7px;
     padding: 3.5%;
-    
+    background-color: #f4f4f4;
+}
+a {
+    color: white;
+    text-decoration: none;
 }
 img {
     height: 200px;
     width: 530px;
+    margin-left: 28%;
 }
 ul {
     list-style-type: none;
@@ -19,10 +24,13 @@ ul {
     height: 400px;
     width: 800px;
     margin: 2% 0;
-    border: 10px solid rgb(0,116,141);
-    border-radius: 8px;
+    margin-left: 15%;
+    border: 15px solid black;
+    border-top: 40px solid black;
+    border-bottom: 30px solid black;
+    border-radius: 15px;
     padding: 1.5%;
-    background-color: #663399;
+    background-color: rgb(153,102,153);
     color: white;
 }
 label {
@@ -54,10 +62,11 @@ button {
     width: 130px;
     color: white;
     border: 2px solid rgb(139,138,143);
-    background-color: #663399;
+    background-color: rgb(153,102,153);
     border-radius: 6px;
     font-size: 95%;
     margin-top: 1%;
+    margin-left: 1%;
 }
 #refresh {
     height: 30px;
@@ -67,11 +76,20 @@ button {
     border-radius: 7px;
     font-size: 95%;
 }
-
-body{
-    background-color: rgb(106,172,230);
-}
-
 footer {
-    margin: 20%;
+    margin-top: 3%;
+    text-align: center;
+    color: black;
+    font-size: 13px;
+}
+#beaut {
+    margin-top: 2%;
+}
+#beautiful {
+    font-weight: bold;
+    border-bottom: 2px dotted black;
+    color: purple;
+}
+#inputs {
+    margin-left: 15%;
 }
