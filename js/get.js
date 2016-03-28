@@ -19,5 +19,5 @@ module.exports = function () {
         console.log(data[i]);
     };
     request.send();
- };
+ }
 };

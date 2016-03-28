@@ -4,12 +4,28 @@ body {
     border: 7px solid rgb(139,138,143);
     border-radius: 7px;
     padding: 3.5%;
-    
+   
 }
 img {
     height: 200px;
     width: 530px;
 }
+ 
+.emojione {
+  /* Emoji Sizing */
+  font-size: inherit;
+  height: 3ex;
+  width: 3.1ex;
+  min-height: 20px;
+  min-width: 20px;
+ 
+  /* Inline alignment adjust the margins  */
+  display: inline-block;
+  margin: -.2ex .15em .2ex;
+  line-height: normal;
+  vertical-align: middle;
+}
+ 
 ul {
     list-style-type: none;
     text-align: left;
@@ -67,11 +83,11 @@ button {
     border-radius: 7px;
     font-size: 95%;
 }
-
+ 
 body{
     background-color: rgb(106,172,230);
 }
-
+ 
 footer {
     margin: 20%;
 }
