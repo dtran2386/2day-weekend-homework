@@ -5,12 +5,33 @@ var send = require('./send');
 window.addEventListener('load', function () {
     console.log('the page is loaded');
     update();
-
     document.getElementById('send').addEventListener('click', send());
 });
 },{"./get":2,"./send":3}],2:[function(require,module,exports){
 var linkifyStr = require('linkifyjs/string');
 var moment = require('moment');
+
+module.exports = function () {
+function getRandom() {
+  var shoutout = new XMLHttpRequest();
+  shoutout.open('GET', 'https://randomuser.me/api/');
+  shoutout.onload = function() {
+    var objectForm = JSON.parse(shoutout.responseText);
+    getRandom(function (person) {
+      var pictures = document.getElementById('textBox');
+      var pic = pictures.setAttribute('src', person.results[0].user.picture.thumbnail);
+    });
+    //callMe(objectForm);
+  };
+  shoutout.send();
+}; // end getRandom
+}; // end module.exports
+//window.addEventListener('load', function () {
+//    getRandom(function (person) {
+//        var pictures = document.getElementById('textBox');
+//        var pic = pictures.setAttribute('src', person.results[0].user.picture.medium);
+//    });
+//});
 
 module.exports = function () {    
     

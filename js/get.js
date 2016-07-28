@@ -1,6 +1,7 @@
 var linkifyStr = require('linkifyjs/string');
 var moment = require('moment');
 
+module.exports = function () {
 function getRandom() {
   var shoutout = new XMLHttpRequest();
   shoutout.open('GET', 'https://randomuser.me/api/');
@@ -14,6 +15,7 @@ function getRandom() {
   };
   shoutout.send();
 }; // end getRandom
+}; // end module.exports
 //window.addEventListener('load', function () {
 //    getRandom(function (person) {
 //        var pictures = document.getElementById('textBox');
@@ -34,7 +36,7 @@ module.exports = function () {
         for (var i = 0; i < data.length; i++) {
             var chatOutput = document.createElement('p');
             chatOutput.textContent = data[i];
-            parent.appendChild(chatOutput).innerHTML = moment(data[i].when).format('LT') + ' [' + data[i].user.toUpperCase() + '] ' + linkifyStr(data[i].message) + getRandom(data[i].id);
+            parent.appendChild(chatOutput).innerHTML = moment(data[i].when).format('LT') + ' [' + data[i].user.toUpperCase() + '] ' + linkifyStr(data[i].message);
         } //end for
         console.log(data[i]);
     };
