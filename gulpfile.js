@@ -1,11 +1,11 @@
 var gulp = require('gulp');
 var htmlhint = require('gulp-htmlhint');
-var css_validation = require('gulp-css-validator');
+//var css_validation = require('gulp-css-validator');
 var jslint = require('gulp-jslint');
 var browserify = require('gulp-browserify');
 var ugligy = require('gulp-uglify');
 
-gulp.task('default', ['html', 'js']);
+gulp.task('default', ['html', 'js', 'css']);
 
 gulp.task('html', function () {
    return gulp.src('./*.html')
@@ -15,8 +15,8 @@ gulp.task('html', function () {
 });
 
 gulp.task('css', function() {
-   return gulp.src('./*.css')
-        .pipe(css_validation())
+   return gulp.src('./css/style.css')
+//        .pipe(css_validation())
         .pipe(gulp.dest('public/css'));
 });
 

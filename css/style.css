@@ -66,6 +66,7 @@ button {
     border-radius: 6px;
     font-size: 95%;
     margin-top: 1%;
+    margin-left: 1%;
 }
 #refresh {
     height: 30px;
